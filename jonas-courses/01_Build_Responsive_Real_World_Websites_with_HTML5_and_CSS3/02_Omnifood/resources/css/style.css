@@ -423,3 +423,11 @@ cite img {
   margin-right: 0.500em;
   border-radius: 50%;
 }
+
+/* --------------------------- */
+/* SIGN UP */
+/* --------------------------- */
+
+.section-plans {
+  background-color: hsla(0, 0%, 93%, 0.62);
+}
