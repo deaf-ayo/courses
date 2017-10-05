@@ -1,6 +1,6 @@
 /*
 Orange color: hsl(28, 80%, 52%)
-
+dark orange: hsl(28, 80%, 45%)
 */
 
 /* --------------------------- */
@@ -117,10 +117,42 @@ h1 span {
   margin-bottom: 0.250em;
 }
 
+.icon-small {
+  display: inline-block;
+  width: 1.500em;
+  text-align: center;
+  color: hsl(28, 80%, 52%);
+  font-size: 120%;
+  margin-right: 0.500em;
+
+  /* secrets to align text and icons */
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -0.200em;
+}
+
+/* ---- LINKS ---- */
+
+a:link,
+a:visited {
+  color: hsl(28, 80%, 52%);
+  text-decoration: none;
+  padding-bottom: 0.050em;
+  border-bottom: 0.050em solid hsl(28, 80%, 52%);
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: hsl(28, 80%, 45%);
+  border-bottom: 0.050em solid transparent;
+}
+
 /* ---- BUTTONS ---- */
 
 .btn:link,
-.btn:visited {
+.btn:visited,
+input[type=submit] {
   display: inline-block;
   padding: 0.500em 1.500em;
   font-weight: 300;
@@ -130,7 +162,8 @@ h1 span {
 }
 
 .btn-full:link,
-.btn-full:visited {
+.btn-full:visited,
+input[type=submit] {
   background-color: hsl(28, 80%, 52%);
   border: 0.050em solid hsl(28, 80%, 52%);
   color: hsl(0, 0%, 100%);
@@ -144,7 +177,9 @@ h1 span {
 }
 
 .btn:hover,
-.btn:active {
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
   background-color: hsl(28, 80%, 45%);
 }
 
@@ -168,6 +203,7 @@ header {
   background-size: cover;
   background-position: center;
   height: 100vh;
+  background-attachment: fixed;
 }
 
 .hero-text-box {
@@ -264,7 +300,7 @@ header {
 /* --------------------------- */
 
 .section-steps {
-  background-color: hsl(0, 0%, 96%);
+  background-color: hsla(0, 0%, 93%, 0.62);
 }
 
 .steps-box:first-child {
@@ -318,8 +354,243 @@ margin-bottom: 2.500em;
   float: left;
 }
 
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+
 .btn-app img {
   height: 50px;
   width: auto;
   margin-right: 10px;
+}
+
+/* --------------------------- */
+/* CITIES */
+/* --------------------------- */
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.750em;
+}
+
+.city-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.city-feature {
+  margin-bottom: 0.550em;
+}
+
+/* --------------------------- */
+/* TESTIMONIALS */
+/* --------------------------- */
+
+.section-testimonials {
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(img/back-customers.jpg);
+  background-position: center;
+  background-size: cover;
+  color: hsl(0, 0%, 100%);
+  background-attachment: fixed;
+}
+
+blockquote {
+  padding: 2%;
+  font-style: italic;
+  line-height: 135%;
+  position: relative;
+  margin-top: 2.000em;
+}
+
+blockquote:before {
+  content: "\201C";
+  font-size: 500%;
+  display: block;
+  position: absolute;
+  top: -0.120em;
+  left: -0.060em;
+}
+
+cite {
+  font-size: 90%;
+  margin-top: 1.250em;
+  display: block;
+}
+
+cite img {
+  height: 2.500em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.500em;
+  border-radius: 50%;
+}
+
+/* --------------------------- */
+/* SIGN UP */
+/* --------------------------- */
+
+.section-plans {
+  background-color: hsla(0, 0%, 93%, 0.62);
+}
+
+.plan-box {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.250em;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 0.100em 0.100em hsla(0, 0%, 89%, 0.52);
+}
+
+.plan-box div {
+  padding: 0.750em;
+  border-bottom: 0.050em solid #e8e8e8;
+}
+
+.plan-box div:first-child {
+  background-color: hsl(0, 0%, 99%);
+  border-top-left-radius: 0.250em;
+  border-top-right-radius: 0.250em;
+}
+
+.plan-box div:last-child {
+  text-align: center;
+  border: 0;
+}
+
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 0.500em;
+  font-weight: 100;
+  color: hsl(28, 80%, 52%);
+}
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 300;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none;
+}
+
+.plan-box li {
+  padding: 0.250em 0;
+}
+
+/* --------------------------- */
+/* FORM */
+/* --------------------------- */
+
+.contact-form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 0.250em;
+  border-radius: 0.150em;
+  border: 0.050em solid #e2e2e2;
+}
+
+textarea {
+  height: 5.000em;
+}
+
+input[type=checkbox] {
+  margin: 0.500em 0.250em 0.500em 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* --------------------------- */
+/* FOOTER */
+/* --------------------------- */
+
+footer {
+  background-color: hsl(0, 0%, 20%);
+  padding: 2.000em;
+  font-size: 90%;
+}
+
+.footer-nav {
+  list-style: none;
+  float: left;
+}
+
+.social-links {
+  list-style: none;
+  float: right;
+}
+
+.footer-nav li,
+.social-links li {
+  display: inline-block;
+  margin-right: 1.000em;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+  margin: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: hsla(0, 0%, 76%, 0.49);
+  transition: color 0.2s;
+}
+
+.footer-nav li a:hover {
+  color: hsl(28, 80%, 52%);
+}
+
+.social-links li a:link,
+.social-links lia a:visited {
+  font-size: 150%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+  transition: color 0.2s;
+}
+
+.ion-social-facebook:hover {
+  color: hsl(221, 44%, 41%);
+}
+
+.ion-social-twitter:hover {
+  color: hsl(195, 100%, 47%);
+}
+
+.ion-social-googleplus:hover {
+  color: hsl(8, 73%, 54%);
+}
+
+.ion-social-instagram:hover {
+  color: hsl(349, 75%, 57%);
+}
+
+footer p {
+  color: hsla(0, 0%, 76%, 0.49);
+  text-align: center;
+  font-size: 80%;
+  margin-top: 0.500em;
 }
