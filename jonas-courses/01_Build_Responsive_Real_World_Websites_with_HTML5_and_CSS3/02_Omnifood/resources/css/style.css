@@ -1,0 +1,325 @@
+/*
+Orange color: hsl(28, 80%, 52%)
+
+*/
+
+/* --------------------------- */
+/* BASIC SETUP */
+/* --------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 33%);
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
+
+.clearfix {zoom: 1}
+.clearfix:after {
+  content: '.';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* --------------------------- */
+/* REUSABLE COMPONENTS */
+/* --------------------------- */
+
+.row {
+  max-width: 57em;
+  margin: 0 auto;
+}
+
+section {
+  padding: 4.000em 0;
+}
+
+.box {
+  padding: 1%;
+}
+
+/* ---- HEADINGS ---- */
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  word-spacing: 0.150em;
+}
+
+h1 {
+  font-size: 240%;
+  margin-top: 0;
+  margin-bottom: 1.000em;
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 0.050em;
+}
+
+h2 {
+  font-size: 180%;
+  word-spacing: 0.100em;
+  text-align: center;
+  margin-bottom: 1.500em;
+  letter-spacing: 0.050em;
+}
+
+h3 {
+  font-size: 110%;
+  margin-bottom: 0.750em;
+}
+
+h2:after {
+  display: block;
+  height: 0.100em;
+  width: 5.000em;
+  background-color: hsl(28, 80%, 52%);
+  content: " ";
+  margin: 1.500em auto 0 auto;
+}
+
+/* simulates br in css instead of using it in html - leave layout to css! */
+h1 span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* ---- PARAGRAPHS ---- */
+
+.long-copy {
+  line-height: 135%;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.box p {
+  font-size: 90%;
+  line-height: 135%;
+}
+
+/* ---- ICONS ---- */
+
+.icon-big {
+  font-size: 350%;
+  display: block;
+  color: hsl(28, 80%, 52%);
+  margin-bottom: 0.250em;
+}
+
+/* ---- BUTTONS ---- */
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 0.500em 1.500em;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 10.000em;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: hsl(28, 80%, 52%);
+  border: 0.050em solid hsl(28, 80%, 52%);
+  color: hsl(0, 0%, 100%);
+  margin-right: 0.750em;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 0.050em solid hsl(28, 80%, 52%);
+  color: hsl(28, 80%, 52%);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: hsl(28, 80%, 45%);
+}
+
+.btn-full:hover,
+.btn-full:active {
+  border: 0.050em solid hsl(28, 80%, 45%);
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  border: 0.050em solid hsl(28, 80%, 45%);
+  color: hsl(0, 0%, 100%);
+}
+
+/* --------------------------- */
+/* HEADER */
+/* --------------------------- */
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.hero-text-box {
+  position: absolute;
+  width: 57em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  height: 5.000em;
+  width: auto;
+  float: left;
+  margin-top: 1.000em;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 2.750em;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 2.000em;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 0.400em 0;
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 0.100em solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 0.100em solid hsl(28, 80%, 52%);
+}
+
+/* --------------------------- */
+/* FEATURES */
+/* --------------------------- */
+
+.section-features .long-copy {
+  margin-bottom: 2.000em;
+}
+
+/* --------------------------- */
+/* MEALS */
+/* --------------------------- */
+
+.section-meals {
+  padding: 0;
+}
+
+.meals-showcase {
+  list-style: none;
+  width: 100%;
+}
+
+.meals-showcase li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.meal-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: hsl(0, 0%, 0%);
+}
+
+.meal-photo img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  transform: scale(1.15);
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.meal-photo img:hover {
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+/* --------------------------- */
+/* HOW IT WORKS */
+/* --------------------------- */
+
+.section-steps {
+  background-color: hsl(0, 0%, 96%);
+}
+
+.steps-box:first-child {
+  text-align: right;
+  padding-right: 3%;
+  margin-top: 1.500em;
+}
+
+.steps-box:last-child {
+  padding-left: 3%;
+  margin-top: 2.600em;
+}
+
+.app-screen {
+  width: 40%;
+}
+
+.work-steps {
+margin-bottom: 2.500em;
+}
+
+.work-steps ol {
+  margin-left: 0;
+  padding-right: 0;
+  list-style: none;
+}
+
+/* solution for customising ol numbers http://blog.teamtreehouse.com/customize-ordered-lists-pseudo-element */
+.work-steps li {
+  margin-bottom: 2.500em;
+  counter-increment: step-counter;
+}
+
+.work-steps:last-of-type {
+  margin-bottom: 3.600em;
+}
+
+.work-steps ol li:before {
+  display: inline-block;
+  content: counter(step-counter);
+  margin-right: 1.050em;
+  font-size: 200%;
+  color: hsl(28, 80%, 52%);
+  border: 2px solid hsl(28, 80%, 52%);
+  border-radius: 50%;
+  height: 45px;
+  width: 50px;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 8px;
+  float: left;
+}
+
+.btn-app img {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
+}
