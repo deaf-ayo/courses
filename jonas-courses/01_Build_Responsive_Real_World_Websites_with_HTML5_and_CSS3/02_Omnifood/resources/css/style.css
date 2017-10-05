@@ -431,3 +431,51 @@ cite img {
 .section-plans {
   background-color: hsla(0, 0%, 93%, 0.62);
 }
+
+.plan-box {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 0.250em;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 0 0.100em 0.100em hsla(0, 0%, 89%, 0.52);
+}
+
+.plan-box div {
+  padding: 0.750em;
+  border-bottom: 0.050em solid #e8e8e8;
+}
+
+.plan-box div:first-child {
+  background-color: hsl(0, 0%, 99%);
+  border-top-left-radius: 0.250em;
+  border-top-right-radius: 0.250em;
+}
+
+.plan-box div:last-child {
+  text-align: center;
+  border: 0;
+}
+
+.plan-price {
+  font-size: 300%;
+  margin-bottom: 0.500em;
+  font-weight: 100;
+  color: hsl(28, 80%, 52%);
+}
+
+.plan-price span {
+  font-size: 30%;
+  font-weight: 300;
+}
+
+.plan-price-meal {
+  font-size: 80%;
+}
+
+.plan-box ul {
+  list-style: none;
+}
+
+.plan-box li {
+  padding: 0.250em 0;
+}
