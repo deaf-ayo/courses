@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mukta', sans-serif;
+  font-size: 1.1em;
+  background-color: rgba(78, 72, 72, 0.14);
+}
+
+h1, h2, .other {
+  font-family: 'Roboto Slab', serif;
+  color: hsla(352, 100%, 40%, 1);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 300;
+  margin-bottom: 0.15em;
+}
+
+.main-text {
+  text-align: justify;
+  margin-bottom: 0.3em;
+  line-height: 140%;
+}
+
+.author-text {
+  font-size: 1.2em;
+  float: left;
+  margin: 1.8em 0 0 0.2em;
+}
+
+.date {
+  position: absolute;
+  top: 0.2em;
+  right: 2em;
+}
+
+.container {
+  width: 65em;
+  margin: 0.8em auto 0 auto;
+}
+
+.blog-post {
+  width: 75%;
+  float: left;
+  padding-right: 2em;
+  position: relative;
+}
+
+.blog-post img {
+  height: 6.5em;
+  width: auto;
+}
+
+.other-posts {
+  width: 25%;
+  float: left;
+}
+
+.other {
+  margin-bottom: 1em;
+}
+
+.author-box {
+  clear: both;
+  border-top: 0.06em solid hsla(312, 56%, 23%, 0.39);
+  padding-top: 0.3em;
+}
+
+.author-box img {
+  height: 6.5em;
+  width: 6.5em;
+  border-radius: 50%;
+  float: left;
+}
+
+.credits {
+  padding-top: 1.3em;
+  clear: both;
+}

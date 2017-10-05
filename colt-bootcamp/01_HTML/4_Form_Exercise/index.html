@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Exercise</title>
+</head>
+
+<body>
+    <h1>Register</h1>
+    <form>
+        <!-- First and last name -->
+        <div>
+            <label for="first-name">First Name:</label>
+            <input name="first-name" id="first-name" type="text" placeholder="John" required>
+            <label for="last-name">Last Name:</label>
+            <input name="last-name" id="last-name" type="text" placeholder="Smith" required>
+        </div>
+        <!-- Gender -->
+        <div>
+            <label for="gender-male">Male</label>
+            <input name="gender" id="gender-male" value="male" type="radio">
+            <label for="gender-female">Female</label>
+            <input name="gender" id="gender-female" value="female" type="radio">
+            <label for="gender-other">Other</label>
+            <input name="gender" id="gender-other" value="other" type="radio">
+        </div>
+        <!-- Email and password -->
+        <div>
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="email" placeholder="your email" required>
+            <label for="password">Password:</label>
+            <input name="password" id="password" type="password" placeholder="your password" pattern=".{5,10}" title="5 to 10 characters" required>
+        </div>
+        <!-- Birthday -->
+        <div>
+            <label for="birthday">Birthday:</label>
+            <!-- Month -->
+            <select name="birthday" id="birthday" title="Month">
+                <option value="disabled" selected disabled>Month</option>
+                <option value="january">January</option>
+                <option value="february">February</option>
+                <option value="march">March</option>
+            </select>
+            <!-- Day -->
+            <select name="birthday-day" id="day" title="Day">
+                <option value="disabled" selected disabled>Day</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+            </select>
+            <!-- Year -->
+            <select name="birthday-year" id="year" title="Year">
+                <option value="disabled" selected disabled>Year</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+            </select>
+        </div>
+        <!-- Terms and conditions -->
+        <div>
+            <label for="terms-and-conditions">I agree to the terms and conditions</label>
+            <input name="terms-and-conditions" id="terms-and-conditions" type="checkbox" required>
+        </div>
+        <!-- Submit button -->
+        <div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+</body>
+</html>

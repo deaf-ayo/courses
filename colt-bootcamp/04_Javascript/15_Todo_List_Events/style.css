@@ -1,0 +1,8 @@
+li:hover {
+    color: rgb(7, 160, 46);
+}
+
+.line {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
