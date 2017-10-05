@@ -1,6 +1,6 @@
 /*
 Orange color: hsl(28, 80%, 52%)
-
+dark orange: hsl(28, 80%, 45%)
 */
 
 /* --------------------------- */
@@ -115,6 +115,37 @@ h1 span {
   display: block;
   color: hsl(28, 80%, 52%);
   margin-bottom: 0.250em;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 1.500em;
+  text-align: center;
+  color: hsl(28, 80%, 52%);
+  font-size: 120%;
+  margin-right: 0.500em;
+
+  /* secrets to align text and icons */
+  line-height: 120%;
+  vertical-align: middle;
+  margin-top: -0.200em;
+}
+
+/* ---- LINKS ---- */
+
+a:link,
+a:visited {
+  color: hsl(28, 80%, 52%);
+  text-decoration: none;
+  padding-bottom: 0.050em;
+  border-bottom: 0.050em solid hsl(28, 80%, 52%);
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: hsl(28, 80%, 45%);
+  border-bottom: 0.050em solid transparent;
 }
 
 /* ---- BUTTONS ---- */
@@ -264,7 +295,7 @@ header {
 /* --------------------------- */
 
 .section-steps {
-  background-color: hsl(0, 0%, 96%);
+  background-color: hsla(0, 0%, 93%, 0.62);
 }
 
 .steps-box:first-child {
@@ -318,8 +349,33 @@ margin-bottom: 2.500em;
   float: left;
 }
 
+.btn-app:link,
+.btn-app:visited {
+  border: 0;
+}
+
 .btn-app img {
   height: 50px;
   width: auto;
   margin-right: 10px;
+}
+
+/* --------------------------- */
+/* CITIES */
+/* --------------------------- */
+
+.box img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.750em;
+}
+
+.city-photo {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.city-feature {
+  margin-bottom: 0.550em;
 }
