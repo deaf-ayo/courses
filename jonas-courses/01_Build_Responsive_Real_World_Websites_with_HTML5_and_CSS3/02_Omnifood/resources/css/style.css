@@ -280,8 +280,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: hsl(0, 0%, 95%);
+  background-color: hsl(0, 0%, 98%);
   box-shadow: 0 2px 2px hsl(0, 0%, 94%);
+  z-index: 9999;
 }
 
 .sticky .main-nav { margin-top: 18px; }
