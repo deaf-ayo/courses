@@ -211,8 +211,8 @@ input[type=submit]:active {
 /* --------------------------- */
 
 header {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero-min.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -457,8 +457,8 @@ margin-bottom: 2.500em;
 /* --------------------------- */
 
 .section-testimonials {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 0%, 0.8)), to(hsla(0, 0%, 0%, 0.8))), url(img/back-customers.jpg);
-  background-image: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(img/back-customers.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 0%, 0.8)), to(hsla(0, 0%, 0%, 0.8))), url(img/back-customers-min.jpg);
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(img/back-customers-min.jpg);
   background-position: center;
   background-size: cover;
   color: hsl(0, 0%, 100%);
