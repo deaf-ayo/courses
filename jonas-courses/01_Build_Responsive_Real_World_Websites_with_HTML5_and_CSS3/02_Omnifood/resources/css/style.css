@@ -273,6 +273,20 @@ header {
   border-bottom: 0.100em solid hsl(28, 80%, 52%);
 }
 
+/* ---- MOBILE NAV ---- */
+
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: hsl(0, 0%, 100%);
+}
+
 /* ---- STICKY NAV ---- */
 
 .sticky {
