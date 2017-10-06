@@ -211,8 +211,8 @@ input[type=submit]:active {
 /* --------------------------- */
 
 header {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(img/hero-min.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero-min.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -235,10 +235,20 @@ header {
   margin-top: 1.000em;
 }
 
+.logo-black {
+  display: none;
+  height: 50px;
+  width: auto;
+  float: left;
+  margin: 5px 0;
+}
+
+/* ---- MAIN NAV ---- */
+
 .main-nav {
   float: right;
   list-style: none;
-  margin-top: 2.750em;
+  margin-top: 55px;
 }
 
 .main-nav li {
@@ -248,12 +258,12 @@ header {
 
 .main-nav li a:link,
 .main-nav li a:visited {
-  padding: 0.400em 0;
+  padding: 8px 0;
   color: hsl(0, 0%, 100%);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 90%;
-  border-bottom: 0.100em solid transparent;
+  border-bottom: 2px solid transparent;
   -webkit-transition: border-bottom 0.2s;
   transition: border-bottom 0.2s;
 }
@@ -262,6 +272,43 @@ header {
 .main-nav li a:active {
   border-bottom: 0.100em solid hsl(28, 80%, 52%);
 }
+
+/* ---- MOBILE NAV ---- */
+
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: hsl(0, 0%, 100%);
+}
+
+/* ---- STICKY NAV ---- */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 98%);
+  box-shadow: 0 2px 2px hsl(0, 0%, 94%);
+  z-index: 9999;
+}
+
+.sticky .main-nav { margin-top: 18px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  padding: 16px 0;
+  color: hsl(0, 0%, 33%);
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }
 
 /* --------------------------- */
 /* FEATURES */
@@ -410,8 +457,8 @@ margin-bottom: 2.500em;
 /* --------------------------- */
 
 .section-testimonials {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 0%, 0.8)), to(hsla(0, 0%, 0%, 0.8))), url(img/back-customers.jpg);
-  background-image: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(img/back-customers.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 0%, 0.8)), to(hsla(0, 0%, 0%, 0.8))), url(img/back-customers-min.jpg);
+  background-image: linear-gradient(hsla(0, 0%, 0%, 0.8), hsla(0, 0%, 0%, 0.8)), url(img/back-customers-min.jpg);
   background-position: center;
   background-size: cover;
   color: hsl(0, 0%, 100%);
@@ -617,4 +664,25 @@ footer p {
   text-align: center;
   font-size: 80%;
   margin-top: 0.500em;
+}
+
+/* --------------------------- */
+/* ANIMATIONS */
+/* --------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+  opacity: 0;
+  animation-duration: 1s;
+}
+
+.js--wp-4 {
+  animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-2.animated,
+.js--wp-3.animated {
+  opacity: 1;
 }
