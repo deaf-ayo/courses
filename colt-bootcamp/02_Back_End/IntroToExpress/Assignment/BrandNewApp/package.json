@@ -1,0 +1,14 @@
+{
+  "name": "brandnewapp",
+  "version": "1.0.0",
+  "description": "a brand new app to create from scratch",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Donkey Kong",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
