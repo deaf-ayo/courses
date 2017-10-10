@@ -1,3 +1,5 @@
+const displayTodosButton = document.getElementById('displayTodosButton');
+
 let todoList = {
   todos: [],
   displayTodos: function() {
@@ -54,3 +56,7 @@ let todoList = {
     this.displayTodos();
   }
 };
+
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
