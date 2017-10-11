@@ -61,5 +61,14 @@ let handlers = {
   },
   toggleAll: function() {
     todoList.toggleAll();
+  },
+  addTodo: function() {
+    let addTodoTextInput = document.getElementById('addTodoTextInput');
+    if(addTodoTextInput.value === "" || null) {
+      alert("This input can't be empty. Please submit text.");
+    } else {
+      todoList.addTodo(addTodoTextInput.value);
+      addTodoTextInput.value = "";
+    }
   }
 }
