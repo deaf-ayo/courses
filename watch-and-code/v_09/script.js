@@ -109,7 +109,15 @@ let view = {
     let todosUl = document.querySelector('ul');
     todosUl.innerHTML = "";
     for(let i = 0; i < todoList.todos.length; i++) {
+      let todo = todoList.todos[i];
       let todoLi = document.createElement('li');
+      let todoTextWithCompletion = "";
+      if(todo.completed === true) {
+        todoTextWithCompletion = "(x) " + todo.todoText;
+         } else {
+           todoTextWithCompletion = "() " + todo.todoText;
+         }
+      todoLi.textContent = todoTextWithCompletion;
       todosUl.appendChild(todoLi);
     }
   }
