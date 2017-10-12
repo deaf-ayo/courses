@@ -114,6 +114,12 @@ let view = {
   }
 }
 
+let todosUl = document.querySelector('ul');
+
+todosUl.addEventListener('click', function(event) {
+  console.log(event.target.parentNode.id);
+});
+
 function isEmpty(el) {
   let elValue = el.value;
   if(el.value === "" || null) {
