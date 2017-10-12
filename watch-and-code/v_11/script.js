@@ -83,8 +83,7 @@ let view = {
   displayTodos: function() {
     let todosUl = document.querySelector('ul');
     todosUl.innerHTML = "";
-    for(let i = 0; i < todoList.todos.length; i++) {
-      let todo = todoList.todos[i];
+    todoList.todos.forEach(function(todo, position){
       let todoLi = document.createElement('li');
       let todoTextWithCompletion = "";
       if(todo.completed === true) {
@@ -92,11 +91,11 @@ let view = {
          } else {
            todoTextWithCompletion = "() " + todo.todoText;
          }
-      todoLi.id = i;
+      todoLi.id = position;
       todoLi.textContent = todoTextWithCompletion;
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
-    }
+    }, this);
   },
   createDeleteButton: function() {
     let deleteButton = document.createElement('button');
