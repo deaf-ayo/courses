@@ -69,3 +69,18 @@ console.log('Hello world!');
 */
 
 // Lecture: if/else statements ---------------------------------
+
+let name = 'Jelly';
+let age = 85;
+let isWobbly = true;
+
+if (isWobbly) {
+  console.log('Oooh yaas');
+} else {
+  console.log('This jelly is defective!');
+}
+// === vs ==
+if (23 == '23') {
+  console.log('Beep Bop printing this out...');
+}
+
