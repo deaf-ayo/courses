@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Lecture: variables
 
 /*
@@ -63,3 +64,6 @@ ageGoat++;
 ageSheep *= 2;
 console.log(ageGoat);
 console.log(ageSheep);
+=======
+console.log('Hello world!');
+>>>>>>> 8af5504595dbd301edd182eb32c4094ae29e7448
