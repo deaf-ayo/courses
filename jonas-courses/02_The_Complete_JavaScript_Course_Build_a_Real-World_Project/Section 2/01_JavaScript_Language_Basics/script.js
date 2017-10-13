@@ -1,4 +1,5 @@
 // Lecture: variables
+
 /*
 let name = 'John';
 console.log(name);
@@ -17,6 +18,7 @@ console.log(likesBugs);
 
 // Lecture: variables part 2
 
+/*
 let name = 'Bojack';
 let age = 52;
 
@@ -40,3 +42,24 @@ console.log(name + ' is a ' + age + ' years old and he is ' + job + '. Is he mar
 let watchedShow = prompt('Have you seen the Bojack Horseman show?');
 console.log(watchedShow);
 alert('Your answer: ' + watchedShow);
+*/
+
+// Lecture: operators
+
+let now = 2017;
+let birthYear = now - 52;
+birthYear = now - 52 * 2;
+// 2017 - 52;
+// 1965
+console.log(birthYear);
+
+let ageGoat = 7;
+let ageSheep = 5;
+
+ageGoat =  ageSheep = (3 + 5) * 4 - 6;
+// ageGoat = ageSheep = 26
+// ageGoat = 26
+ageGoat++;
+ageSheep *= 2;
+console.log(ageGoat);
+console.log(ageSheep);
