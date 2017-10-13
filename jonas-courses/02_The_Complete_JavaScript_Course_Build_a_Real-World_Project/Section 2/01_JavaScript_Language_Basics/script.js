@@ -1,4 +1,4 @@
-// Lecture: variables
+// Lecture: variables ---------------------------------
 
 /*
 let name = 'John';
@@ -16,7 +16,7 @@ let likesBugs = false;
 console.log(likesBugs);
 */
 
-// Lecture: variables part 2
+// Lecture: variables part 2 ---------------------------------
 
 /*
 let name = 'Bojack';
@@ -44,8 +44,9 @@ console.log(watchedShow);
 alert('Your answer: ' + watchedShow);
 */
 
-// Lecture: operators
+// Lecture: operators ---------------------------------
 
+/*
 let now = 2017;
 let birthYear = now - 52;
 birthYear = now - 52 * 2;
@@ -65,3 +66,6 @@ console.log(ageGoat);
 console.log(ageSheep);
 =======
 console.log('Hello world!');
+*/
+
+// Lecture: if/else statements ---------------------------------
