@@ -88,6 +88,7 @@ if (23 == '23') {
 
 // Lecture: boolean logic and switch ---------------------------------
 
+/*
 let age = 26;
 if (age < 20) {
   console.log('Teenager');
@@ -138,3 +139,61 @@ function alsoDoThis(job) {
       console.log('Nothing to see here. Move along.');
   }
 }
+*/
+
+// CODING CHALLENGE 1 ---------------------------------
+
+/*
+John and a friend invented a simple game where the player with the highest value of their height (in centimeters) plus five times their age wins (what a silly game !)
+
+1. Create variables for the heights and ages of two friends and assign them some values
+2. Calculate their scores
+3. Decide who wins and print the winner to the console. Include the score in the string that you output to the console. Don't forget that there can be a draw (both players with the same score)
+
+4. EXTRA: Add a third player and decide who wins. Hint: you will need the && operator to take the decision.
+*/
+
+let arr = [];
+
+let firstChallenger = {
+  name: 'John',
+  height: 163,
+  age: 15,
+  score: null
+}
+let secondChallenger = {
+  name: 'George',
+  height: 171,
+  age: 16,
+  score: null
+}
+let thirdChallenger = {
+  name: 'Kate',
+  height: 158,
+  age: 13,
+  score: null
+}
+
+arr.push(firstChallenger, secondChallenger, thirdChallenger);
+
+function generateScoreAndWinner() {
+  let maxScore;
+  maxScore = arr[0].score;
+  arr.forEach(function(challenger) {
+    challenger.score = parseInt(challenger.height + (challenger.age * 5));
+    console.log(`${challenger.name}'s score is : ${challenger.score}`);
+    if (challenger.score > maxScore) {
+      maxScore = challenger.score;
+    }
+  });
+  // check for draws
+  // if there's a single winner
+  arr.forEach(function(winner) {
+    //
+    if (maxScore === winner.score) {
+      console.log(`The winner is ${winner.name} with a high score of ${winner.score}`);
+    }
+  });
+}
+
+generateScoreAndWinner();
