@@ -154,7 +154,9 @@ John and a friend invented a simple game where the player with the highest value
 */
 
 let arr = [];
+let scoreArr = [];
 let maxScore;
+let lineBreak = '--------------------------';
 
 let firstChallenger = {
   name: 'John',
@@ -180,7 +182,13 @@ maxScore = arr[0].score;
 
 function generateScoresAndWinner() {
   scores();
-  winner();
+  drawSort()
+  if (scoreArr.length === 1) {
+    winner();
+  } else {
+    draw();
+  }
+  scoreArr = [];
 }
 
 generateScoresAndWinner();
@@ -193,6 +201,7 @@ function scores() {
       maxScore = challenger.score;
     }
   });
+  console.log(lineBreak);
 }
 
 function winner() {
@@ -201,4 +210,36 @@ function winner() {
       console.log(`The winner is ${winner.name} with a high score of ${winner.score}`);
     }
   });
+}
+
+function drawSort() {
+  arr.forEach(function(drawSort) {
+    if (drawSort.score >= maxScore) {
+      scoreArr.push(drawSort);
+    }
+  });
+}
+
+function draw() {
+  console.log(`Wow, folks. It's a draw! The list of names are...`);
+  console.log(lineBreak);
+  scoreArr.forEach(function(challenger) {
+    console.log(`${challenger.name}`);
+  })
+  console.log(lineBreak);
+  console.log(`With a score of : ${maxScore}`);
+}
+
+// run this to check out the draw results
+function testDraw() {
+  let fourthChallenger = {
+    name: 'Angela',
+    height: 171,
+    age: 16,
+    score: null
+  }
+  arr.push(fourthChallenger);
+  generateScoresAndWinner();
+  scoreArr = [];
+  arr.splice(3, 1);
 }
