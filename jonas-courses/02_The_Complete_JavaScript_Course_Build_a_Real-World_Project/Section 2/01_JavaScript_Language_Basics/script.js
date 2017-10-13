@@ -70,6 +70,7 @@ console.log('Hello world!');
 
 // Lecture: if/else statements ---------------------------------
 
+/*
 let name = 'Jelly';
 let age = 85;
 let isWobbly = true;
@@ -83,4 +84,57 @@ if (isWobbly) {
 if (23 == '23') {
   console.log('Beep Bop printing this out...');
 }
+*/
 
+// Lecture: boolean logic and switch ---------------------------------
+
+let age = 26;
+if (age < 20) {
+  console.log('Teenager');
+} else if (age >= 20 && age < 30) {
+  console.log('Young Adult');
+} else {
+  console.log('Adult');
+}
+
+function doThisForMe(age) {
+  if (age < 20) {
+    console.log('Teenager');
+  } else if (age >= 20 && age < 30) {
+    console.log('Young Adult');
+  } else {
+    console.log('Adult');
+  }
+}
+
+let job = 'teacher';
+
+switch (job) {
+  case 'teacher':
+    console.log('Teacher of Art Things.');
+    break;
+  case 'driver':
+    console.log('Driver of Zoomie Zooms.');
+    break;
+  case 'secret agent':
+    console.log('How did you know that??? You triggered protocol 42. Too bad...');
+    break;
+  default:
+    console.log('Nothing to see here. Move along.');
+}
+
+function alsoDoThis(job) {
+  switch (job) {
+    case 'teacher':
+      console.log('Teacher of Art Things.');
+      break;
+    case 'driver':
+      console.log('Driver of Zoomie Zooms.');
+      break;
+    case 'secret agent':
+      console.log('How did you know that??? You triggered protocol 42. Too bad...');
+      break;
+    default:
+      console.log('Nothing to see here. Move along.');
+  }
+}
