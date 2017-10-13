@@ -154,6 +154,7 @@ John and a friend invented a simple game where the player with the highest value
 */
 
 let arr = [];
+let maxScore;
 
 let firstChallenger = {
   name: 'John',
@@ -175,10 +176,16 @@ let thirdChallenger = {
 }
 
 arr.push(firstChallenger, secondChallenger, thirdChallenger);
+maxScore = arr[0].score;
 
-function generateScoreAndWinner() {
-  let maxScore;
-  maxScore = arr[0].score;
+function generateScoresAndWinner() {
+  scores();
+  winner();
+}
+
+generateScoresAndWinner();
+
+function scores() {
   arr.forEach(function(challenger) {
     challenger.score = parseInt(challenger.height + (challenger.age * 5));
     console.log(`${challenger.name}'s score is : ${challenger.score}`);
@@ -186,14 +193,12 @@ function generateScoreAndWinner() {
       maxScore = challenger.score;
     }
   });
-  // check for draws
-  // if there's a single winner
+}
+
+function winner() {
   arr.forEach(function(winner) {
-    //
     if (maxScore === winner.score) {
       console.log(`The winner is ${winner.name} with a high score of ${winner.score}`);
     }
   });
 }
-
-generateScoreAndWinner();
