@@ -249,3 +249,28 @@ function testDraw() {
 */
 
 // Lecture: functions ---------------------------------
+
+function calculateAge(yearOfBirth) {
+  let age = 2017 - yearOfBirth;
+  return age;
+}
+
+let ageAdam = calculateAge(1989);
+let agePeanutButter = calculateAge(1921);
+let ageTodd = calculateAge(1961);
+console.log(ageAdam);
+console.log(agePeanutButter);
+console.log(ageTodd);
+
+function yearsUntilRetirement(name, year) {
+  let age = calculateAge(year);
+  let retirement = 65 - age;
+  if (retirement >= 0) {
+    console.log(`${name} retires in ${retirement} years`);
+  } else {
+    console.log(`${name} has already retired`);
+  }
+}
+
+yearsUntilRetirement('Todd', 1961);
+yearsUntilRetirement('OldDude', 1792);
