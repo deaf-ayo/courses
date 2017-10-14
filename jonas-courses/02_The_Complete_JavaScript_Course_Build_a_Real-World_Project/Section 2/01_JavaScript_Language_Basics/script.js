@@ -250,6 +250,7 @@ function testDraw() {
 
 // Lecture: functions ---------------------------------
 
+/*
 function calculateAge(yearOfBirth) {
   let age = 2017 - yearOfBirth;
   return age;
@@ -274,3 +275,6 @@ function yearsUntilRetirement(name, year) {
 
 yearsUntilRetirement('Todd', 1961);
 yearsUntilRetirement('OldDude', 1792);
+*/
+
+// Lecture: statements and expressions ---------------------------------
