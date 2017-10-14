@@ -323,7 +323,7 @@ console.log(john.includes('teacher'));
 */
 
 // Lecture: objects ---------------------------------
-
+/*
 let personOne = {
   name: 'John',
   surname: 'Smith',
@@ -345,3 +345,50 @@ let buddy = new Object();
 buddy.name = 'Bud';
 buddy.job = 'Coach';
 console.log(buddy.name, buddy.job);
+*/
+
+// Lecture: objects and methods ---------------------------------
+
+
+// v1.0
+/*
+let personModel = {
+  name: 'John',
+  surname: 'Smith',
+  yearOfBirth: '1984',
+  job: 'teacher',
+  isMarried: false,
+  family: ['Jane', 'Mark', 'Bob'],
+  calculateAge: function() {
+    return 2017 - this.yearOfBirth;
+  }
+};
+*/
+
+// console.log(personModel.calculateAge());
+
+// v2.0
+
+let personModel = {
+  name: 'John',
+  surname: 'Smith',
+  yearOfBirth: '1984',
+  job: 'teacher',
+  isMarried: false,
+  family: ['Jane', 'Mark', 'Bob'],
+  calculateAge: function() {
+    this.age = 2017 - this.yearOfBirth;
+  }
+};
+
+personModel.calculateAge();
+console.log(personModel);
+
+let mike = {
+  yearOfBirth: 1492,
+  calculateAge: function() {
+    this.age = 2017 - this.yearOfBirth;
+  }
+};
+mike.calculateAge();
+console.log(mike);
