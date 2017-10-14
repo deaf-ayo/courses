@@ -278,3 +278,23 @@ yearsUntilRetirement('OldDude', 1792);
 */
 
 // Lecture: statements and expressions ---------------------------------
+/*
+// function statement
+function someFun(par) {
+  // code
+}
+
+// function expression
+let someFun = function(par) {
+  // code
+}
+
+// Expressions
+3 + 4;
+var x = 3;
+
+// Statements
+if ( x === 5) {
+  // do this
+}
+*/
