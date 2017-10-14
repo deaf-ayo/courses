@@ -300,7 +300,7 @@ if ( x === 5) {
 */
 
 // Lecture: arrays ---------------------------------
-
+/*
 let names = ['John', 'Peter', 'Daredevil'];
 let years = new Array(1990, 1984, 1975);
 console.log(names[2]);
@@ -317,3 +317,31 @@ console.log(john);
 if(john.indexOf('designer') === -1 ) {
   console.log('John is NOT a designer');
 }
+
+// es7 .includes
+console.log(john.includes('teacher'));
+*/
+
+// Lecture: objects ---------------------------------
+
+let personOne = {
+  name: 'John',
+  surname: 'Smith',
+  likes: ['mango', 'tea'],
+  job: 'Drinker of Tea'
+}
+console.log(personOne.name);
+console.log(personOne['surname']);
+console.log(personOne.likes[1]);
+
+let xyz = 'job';
+console.log(personOne[xyz]);
+
+personOne.surname = 'Buzzington';
+personOne['job'] = 'Honey Collector'
+console.log(personOne.surname, personOne.job);
+
+let buddy = new Object();
+buddy.name = 'Bud';
+buddy.job = 'Coach';
+console.log(buddy.name, buddy.job);
