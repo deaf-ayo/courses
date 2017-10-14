@@ -298,3 +298,22 @@ if ( x === 5) {
   // do this
 }
 */
+
+// Lecture: arrays ---------------------------------
+
+let names = ['John', 'Peter', 'Daredevil'];
+let years = new Array(1990, 1984, 1975);
+console.log(names[2]);
+names[1] = 'Ben';
+console.log(names);
+
+let john =['John', 'Smith', 1990, 'teacher'];
+john.push('blue');
+john.unshift('Mr.');
+john.pop();
+john.shift();
+console.log(john);
+
+if(john.indexOf('designer') === -1 ) {
+  console.log('John is NOT a designer');
+}
