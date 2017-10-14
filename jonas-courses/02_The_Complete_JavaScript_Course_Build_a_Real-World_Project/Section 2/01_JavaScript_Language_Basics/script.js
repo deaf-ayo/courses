@@ -348,10 +348,8 @@ console.log(buddy.name, buddy.job);
 */
 
 // Lecture: objects and methods ---------------------------------
-
-
-// v1.0
 /*
+// v1.0
 let personModel = {
   name: 'John',
   surname: 'Smith',
@@ -363,7 +361,6 @@ let personModel = {
     return 2017 - this.yearOfBirth;
   }
 };
-*/
 
 // console.log(personModel.calculateAge());
 
@@ -392,3 +389,44 @@ let mike = {
 };
 mike.calculateAge();
 console.log(mike);
+*/
+
+// Lecture: loops ---------------------------------
+
+for (let i = 0; i < 10; i++) {
+  console.log(i);
+}
+
+//0, true, print 0, update i to 1
+//1, true, print 1, update i to 2
+//.
+//.
+//.
+//9, true, prince 9, update i to 10
+//10, FALSE, end loop!
+
+let names = ['John', 'Jane', 'Mary', 'Mark', 'Bob'];
+
+// for loops
+for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+for (let i = names.length-1; i >= 0; i--) {
+  console.log(names[i]);
+}
+// while loops
+let foo = 0;
+while(foo < names.length) {
+  console.log(names[foo], foo);
+  foo++;
+}
+
+// breaks and continues
+
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    // break;
+    continue;
+  }
+  console.log(i);
+}
