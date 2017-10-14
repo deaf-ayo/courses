@@ -153,6 +153,9 @@ John and a friend invented a simple game where the player with the highest value
 4. EXTRA: Add a third player and decide who wins. Hint: you will need the && operator to take the decision.
 */
 
+// https://codepen.io/deaf-ayo/pen/NaLwqq
+
+/*
 let arr = [];
 let scoreArr = [];
 let maxScore;
@@ -182,7 +185,7 @@ maxScore = arr[0].score;
 
 function generateScoresAndWinner() {
   scores();
-  drawSort()
+  drawSort();
   if (scoreArr.length === 1) {
     winner();
   } else {
@@ -243,3 +246,6 @@ function testDraw() {
   scoreArr = [];
   arr.splice(3, 1);
 }
+*/
+
+// Lecture: functions ---------------------------------
