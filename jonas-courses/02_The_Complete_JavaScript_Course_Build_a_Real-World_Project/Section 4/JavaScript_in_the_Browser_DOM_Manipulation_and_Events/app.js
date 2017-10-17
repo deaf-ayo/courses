@@ -9,7 +9,7 @@ GAME RULES:
 
 */
 
-let scores, roundScore, activePlayer, gamePlaying, diceRoll/* coding challenge 1 */;
+let scores, roundScore, activePlayer, gamePlaying, diceRoll/* coding challenge 1 */, scoreLimit/* coding challenge 2 */;
 
 init();
 
@@ -40,7 +40,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
     // update the UI
     document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
     // check if player won the game
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= /*100*/ scoreLimit/* coding challenge 2 */) {
       document.getElementById('name-' + activePlayer).textContent ='Winner!';
       document.querySelector('.dice').style.display ='none';
       document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
@@ -71,6 +71,7 @@ function init() {
   activePlayer = 0;
   gamePlaying = true;
   diceRoll = [0, 0];/* coding challenge 1 */
+  scoreLimit = 100;/* coding challenge 2 */
   document.querySelector('.dice').style.display ='none';
   document.getElementById('score-0').textContent = '0';
   document.getElementById('score-1').textContent = '0';
@@ -83,6 +84,7 @@ function init() {
   document.querySelector('.player-0-panel').classList.remove('active');
   document.querySelector('.player-1-panel').classList.remove('active');
   document.querySelector('.player-0-panel').classList.add('active');
+  document.getElementById('score-limit').value = null;
 }
 /*
 document.querySelector('#current-' + activePlayer).textContent = dice;
@@ -122,3 +124,14 @@ function doubleSixCheck() {
 }
 
 /* coding challenge 2 */
+
+
+document.getElementById('score-limit').addEventListener('change', function() {
+  let scoreLimitInput = document.getElementById('score-limit').value;
+  scoreLimit = parseInt(scoreLimitInput);
+});
+
+document.getElementById('score-limit').addEventListener('keyup', function() {
+  let scoreLimitInput = document.getElementById('score-limit').value;
+  scoreLimit = parseInt(scoreLimitInput);
+});
