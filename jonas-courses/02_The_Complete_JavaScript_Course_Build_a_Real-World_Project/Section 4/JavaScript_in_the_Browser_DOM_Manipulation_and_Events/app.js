@@ -133,3 +133,5 @@ document.getElementById('score-limit').addEventListener('keyup', function() {
   let scoreLimitInput = document.getElementById('score-limit').value;
   scoreLimit = parseInt(scoreLimitInput);
 });
+
+/* coding challenge 3 */
