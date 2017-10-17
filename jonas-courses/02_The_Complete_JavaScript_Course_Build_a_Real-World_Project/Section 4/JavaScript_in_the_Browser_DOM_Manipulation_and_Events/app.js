@@ -9,7 +9,7 @@ GAME RULES:
 
 */
 
-let scores, roundScore, activePlayer, gamePlaying;
+let scores, roundScore, activePlayer, gamePlaying, diceRoll/* coding challenge 1 */;
 
 init();
 
@@ -25,6 +25,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     if (dice !== 1) {
       // add score
       roundScore += dice;
+      limitArraySize(dice);/* coding challenge 1 */
       document.querySelector('#current-' + activePlayer).textContent = roundScore;
       } else {
       nextPlayer();
@@ -54,6 +55,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
 function nextPlayer() {
   activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
   roundScore = 0;
+  diceRoll = [0, 0];/* coding challenge 1 */
   document.getElementById('current-0').textContent = 0;
   document.getElementById('current-1').textContent = 0;
   document.querySelector('.player-0-panel').classList.toggle('active');
@@ -68,6 +70,7 @@ function init() {
   roundScore = 0;
   activePlayer = 0;
   gamePlaying = true;
+  diceRoll = [0, 0];/* coding challenge 1 */
   document.querySelector('.dice').style.display ='none';
   document.getElementById('score-0').textContent = '0';
   document.getElementById('score-1').textContent = '0';
@@ -97,3 +100,25 @@ Change the game to follow these rules:
 2. Add an input field to the HTML where players can set the winning score, so that they can change the predefined score of 100. (Hint: you can read that value with the .value property in JavaScript. This is a good opportunity to use google to figure this out :)
 3. Add another dice to the game, so that there are two dices now. The player looses his current score when one of them is a 1. (Hint: you will need CSS to position the second dice, so take a look at the CSS code for the first one.)
 */
+
+/* coding challenge 1 */
+function limitArraySize(el) {
+  diceRoll.unshift(el);
+  if (diceRoll.length > 2 ) {
+    diceRoll.length = 2;
+  }
+  doubleSixCheck();
+}
+
+function doubleSixCheck() {
+  let total = diceRoll.reduce((total, amount) => total + amount);
+  if (total === 12) {
+    scores[activePlayer] = 0;
+    roundScore = 0;
+    diceRoll = [0, 0];
+    document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
+    nextPlayer();
+  }
+}
+
+/* coding challenge 2 */
