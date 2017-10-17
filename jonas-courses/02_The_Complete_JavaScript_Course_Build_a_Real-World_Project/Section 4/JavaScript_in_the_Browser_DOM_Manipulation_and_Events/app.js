@@ -124,8 +124,6 @@ function doubleSixCheck() {
 }
 
 /* coding challenge 2 */
-
-
 document.getElementById('score-limit').addEventListener('change', function() {
   let scoreLimitInput = document.getElementById('score-limit').value;
   scoreLimit = parseInt(scoreLimitInput);
