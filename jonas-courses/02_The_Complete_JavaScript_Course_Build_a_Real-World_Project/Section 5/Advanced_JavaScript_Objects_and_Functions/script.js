@@ -8,6 +8,7 @@ let john = {
 }
 */
 
+/*
 let Person = function(name, yearOfBirth, job) {
   this.name = name;
   this.yearOfBirth = yearOfBirth;
@@ -40,3 +41,24 @@ Pet.prototype.meow = function() {
 }
 
 let queenie = new Pet('Queenie', 'Darling', 'Cat');
+*/
+
+// Object.create -----------------------
+
+
+let personProto = {
+  calculateAge: function() {
+    console.log(2017 - this.yearOfBirth);
+  }
+}
+
+let john = Object.create(personProto);
+john.name = 'John';
+john.yearOfBirth = 1990;
+john.job = 'teacher';
+
+let jane = Object.create(personProto, {
+  name: { value: 'Jane' },
+  yearOfBirth: { value: 1974 },
+  job: { value: 'artist' }
+});
