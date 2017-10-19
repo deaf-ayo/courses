@@ -143,6 +143,7 @@ console.log('maxHeartRate', rates);
 
 // Functions returning functions -----------------------
 
+/*
 function interviewQuestion(job) {
   if (job === 'designer') {
     return function(name) {
@@ -166,3 +167,26 @@ teacherQuestion('John');
 designerQuestion('Jane');
 
 interviewQuestion('teacher')('Adam');
+*/
+
+// IIFE : Immediately Invoked Function Expressions -----------------------
+
+/*
+function game() {
+  let score = Math.random() * 10;
+  console.log(score >= 5);
+}
+game();
+*/
+
+(function () {
+  let score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+// console.log(score);
+
+(function (goodLuck) {
+  let score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(5);
