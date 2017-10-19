@@ -66,6 +66,7 @@ let jane = Object.create(personProto, {
 
 // Primitives vs objects -----------------------
 
+/*
 // primitives
 let a = 23;
 let b = a;
@@ -101,3 +102,6 @@ change(age, obj);
 
 console.log(age);
 console.log(obj.city);
+*/
+
+// Passing functions as arguments -----------------------
