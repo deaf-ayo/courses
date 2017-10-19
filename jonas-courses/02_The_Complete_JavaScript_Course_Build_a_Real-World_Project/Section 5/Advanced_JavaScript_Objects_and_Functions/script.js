@@ -105,3 +105,36 @@ console.log(obj.city);
 */
 
 // Passing functions as arguments -----------------------
+
+let years = [1990, 1965, 1937, 2005, 1998, 2014];
+
+function arrayCalc(arr, fn) {
+  let arrRes = [];
+  for (let i = 0; i < arr.length; i++) {
+    arrRes.push(fn(arr[i]));
+  }
+  return arrRes;
+}
+
+function calculateAge(el) {
+  return 2017 - el;
+}
+
+function isFullAge(el) {
+  return el >= 18;
+}
+
+function maxHeartRate(el) {
+  if(el >= 18 && el <= 81) {
+    return Math.round(206.9 - (0.67 * el));
+  } else {
+    return -1;
+  }
+}
+
+let ages = arrayCalc(years, calculateAge);
+let fullAges = arrayCalc(ages, isFullAge);
+let rates = arrayCalc(ages, maxHeartRate);
+console.log('ages', ages);
+console.log('fullAges', fullAges);
+console.log('maxHeartRate', rates);
