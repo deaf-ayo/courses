@@ -66,6 +66,7 @@ let jane = Object.create(personProto, {
 
 // Primitives vs objects -----------------------
 
+/*
 // primitives
 let a = 23;
 let b = a;
@@ -101,3 +102,128 @@ change(age, obj);
 
 console.log(age);
 console.log(obj.city);
+*/
+
+// Passing functions as arguments -----------------------
+
+/*
+let years = [1990, 1965, 1937, 2005, 1998, 2014];
+
+function arrayCalc(arr, fn) {
+  let arrRes = [];
+  for (let i = 0; i < arr.length; i++) {
+    arrRes.push(fn(arr[i]));
+  }
+  return arrRes;
+}
+
+function calculateAge(el) {
+  return 2017 - el;
+}
+
+function isFullAge(el) {
+  return el >= 18;
+}
+
+function maxHeartRate(el) {
+  if(el >= 18 && el <= 81) {
+    return Math.round(206.9 - (0.67 * el));
+  } else {
+    return -1;
+  }
+}
+
+let ages = arrayCalc(years, calculateAge);
+let fullAges = arrayCalc(ages, isFullAge);
+let rates = arrayCalc(ages, maxHeartRate);
+console.log('ages', ages);
+console.log('fullAges', fullAges);
+console.log('maxHeartRate', rates);
+*/
+
+// Functions returning functions -----------------------
+
+/*
+function interviewQuestion(job) {
+  if (job === 'designer') {
+    return function(name) {
+      console.log(`${name}, can you please explain what UX design is?`);
+    }
+  } else if (job === 'teacher') {
+    return function(name) {
+      console.log(`What subject do you teach, ${name}?`);
+    }
+  } else {
+    return function(name) {
+      console.log(`Hello ${name}, what do you do?`);
+    }
+  }
+}
+
+let teacherQuestion = interviewQuestion('teacher');
+let designerQuestion = interviewQuestion('designer');
+
+teacherQuestion('John');
+designerQuestion('Jane');
+
+interviewQuestion('teacher')('Adam');
+*/
+
+// IIFE : Immediately Invoked Function Expressions -----------------------
+
+/*
+function game() {
+  let score = Math.random() * 10;
+  console.log(score >= 5);
+}
+game();
+
+
+(function () {
+  let score = Math.random() * 10;
+  console.log(score >= 5);
+})();
+
+// console.log(score);
+
+(function (goodLuck) {
+  let score = Math.random() * 10;
+  console.log(score >= 5 - goodLuck);
+})(5);
+*/
+
+// Closures -----------------------
+
+function retirement(retirementAge) {
+  let a = ' years left until retirement.';
+  return function(yearOfBirth) {
+    let age = 2017 - yearOfBirth;
+    console.log((retirementAge - age) + a);
+  }
+}
+
+let retirementUS = retirement(66);
+let retirementGermany = retirement(65);
+let retirementIceland = retirement(67);
+
+retirementUS(1989);
+retirementGermany(1989);
+retirementIceland(1989);
+
+// retirement(70)(1989);
+
+function interviewQuestion(job) {
+  return function(name) {
+    if (job === 'designer') {
+      console.log(`${name}, can you please explain what UX design is?`);
+    } else if (job === 'teacher') {
+    console.log(`What subject do you teach, ${name}?`);
+    } else {
+      console.log(`Hello ${name}, what do you do?`);
+    }
+  }
+}
+
+interviewQuestion('teacher')('John');
+interviewQuestion('designer')('Jane');
+interviewQuestion(null)('Bob');
