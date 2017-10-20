@@ -194,6 +194,7 @@ game();
 
 // Closures -----------------------
 
+/*
 function retirement(retirementAge) {
   let a = ' years left until retirement.';
   return function(yearOfBirth) {
@@ -227,3 +228,6 @@ function interviewQuestion(job) {
 interviewQuestion('teacher')('John');
 interviewQuestion('designer')('Jane');
 interviewQuestion(null)('Bob');
+*/
+
+// Bind, call and apply -----------------------
