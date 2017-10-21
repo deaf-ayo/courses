@@ -363,14 +363,19 @@ questionArray.push(bojackQuestion);
     this.correctAnswer = correctAnswer;
   }
 
-  Question.prototype.randomQuestion = function() {
-    let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
-    let answers = randomQuestion.answers;
-    let correctAnswer = randomQuestion.correctAnswer;
-    console.log(randomQuestion.question);
-    answers.forEach(function(el, index) {
-      console.log(`${index + 1}: ${el}`);
-    });
+  let quizMaster = {
+    randomQuestion: function() {
+      let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
+      let answers = randomQuestion.answers;
+      let correctAnswer = randomQuestion.correctAnswer;
+      console.log(randomQuestion.question);
+      answers.forEach(function(el, index) {
+        console.log(`${index + 1}: ${el}`);
+      });
+    },
+    userPrompt: function() {
+
+    }
   }
 
   Question.prototype.userAnswer = function() {
@@ -383,5 +388,5 @@ questionArray.push(bojackQuestion);
   questionArray.push(queenieQuestion);
   questionArray.push(bojackQuestion);
 
-  queenieQuestion.randomQuestion();
+  quizMaster.randomQuestion();
 })();
