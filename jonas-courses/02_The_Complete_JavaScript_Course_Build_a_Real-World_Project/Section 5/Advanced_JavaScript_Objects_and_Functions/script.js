@@ -232,6 +232,7 @@ interviewQuestion(null)('Bob');
 
 // Bind, call and apply -----------------------
 
+/*
 let john = {
   name: 'John',
   age: 26,
@@ -289,3 +290,98 @@ let ages = arrayCalc(years, calculateAge);
 let fullJapan = arrayCalc(ages, isFullAge.bind(this, 20));
 console.log(ages);
 console.log(fullJapan);
+*/
+
+// Coding Challenge -----------------------
+
+
+/*
+--- Let's build a fun quiz game in the console! ---
+
+1. Build a function constructor called Question to describe a question. A question should include:
+a) question itself
+b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
+c) correct answer (I would use a number for this)
+
+2. Create a couple of questions using the constructor
+
+3. Store them all inside an array
+
+4. Select one random question and log it on the console, together with the possible answers (each question should have a number) (Hint: write a method for the Question objects for this task).
+
+5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
+
+6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+
+7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
+*/
+
+// 1
+
+/*
+let questionArray = [];
+
+let Question = function(question, answers, correct) {
+  this.question = question;
+	this.answers = answers;
+  this.correct = correct;
+}
+
+Question.prototype.randomQuestion = function() {
+  // get a random question from question array
+  let length = questionArray.length;
+  let random = Math.floor(Math.random() * length);
+  let randomQuestion = questionArray[random];
+  let answers = randomQuestion.answers;
+  let correctAnswer = randomQuestion.correct;
+  console.log(randomQuestion);
+  console.log(answers);
+  console.log(correctAnswer);
+  // prompts
+  let userAnswer = prompt(`Which is the correct answer? 1) ${answers[0]}, 2) ${answers[1]} or 3) ${answers[2]}`);
+  userAnswer;
+  if (userAnswer - 1 !== correctAnswer) {
+    console.log('Wrong answer. Try again!');
+  } else {
+    console.log('Correct. Well done!');
+  }
+}
+
+let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
+let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
+
+questionArray.push(queenieQuestion);
+questionArray.push(bojackQuestion);
+*/
+
+(function() {
+  let questionArray = [];
+
+  let Question = function(question, answers, correctAnswer) {
+    this.question = question;
+    this.answers = answers;
+    this.correctAnswer = correctAnswer;
+  }
+
+  Question.prototype.randomQuestion = function() {
+    let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
+    let answers = randomQuestion.answers;
+    let correctAnswer = randomQuestion.correctAnswer;
+    console.log(randomQuestion.question);
+    answers.forEach(function(el, index) {
+      console.log(`${index + 1}: ${el}`);
+    });
+  }
+
+  Question.prototype.userAnswer = function() {
+
+  }
+
+  let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
+  let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
+
+  questionArray.push(queenieQuestion);
+  questionArray.push(bojackQuestion);
+
+  queenieQuestion.randomQuestion();
+})();
