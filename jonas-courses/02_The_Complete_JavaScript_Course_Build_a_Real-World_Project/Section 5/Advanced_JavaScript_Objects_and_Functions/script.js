@@ -318,6 +318,7 @@ c) correct answer (I would use a number for this)
 
 // 1
 
+/*
 let questionArray = [];
 
 let Question = function(question, answers, correct) {
@@ -344,6 +345,31 @@ Question.prototype.randomQuestion = function() {
   } else {
     console.log('Correct. Well done!');
   }
+}
+
+let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
+let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
+
+questionArray.push(queenieQuestion);
+questionArray.push(bojackQuestion);
+*/
+
+let questionArray = [];
+
+let Question = function(question, answers, correctAnswer) {
+  this.question = question;
+  this.answers = answers;
+  this.correctAnswer = correctAnswer;
+}
+
+Question.prototype.randomQuestion = function() {
+  let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
+  let answers = randomQuestion.answers;
+  let correctAnswer = randomQuestion.correctAnswer;
+  console.log(randomQuestion.question);
+  answers.forEach(function(el, index) {
+    console.log(`${index + 1}: ${el}`);
+  });
 }
 
 let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
