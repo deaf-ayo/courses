@@ -326,11 +326,14 @@ let Question = function(question, answers, correct) {
   this.correct = correct;
 }
 
-Question.prototype.randomQuestion = function(arr) {
+Question.prototype.randomQuestion = function() {
+  // get a random question from question array
   let length = questionArray.length;
-  let random = Math.floor(Math.random() * length) + 1;
-  console.log(length);
-  console.log(random);
+  let random = Math.floor(Math.random() * length);
+  let randomQuestion = questionArray[random];
+  let answers = randomQuestion.answers;
+  console.log(randomQuestion.question);
+  console.log(`Which is the correct answer? 1) ${answers[0]}, 2) ${answers[1]} or 3) ${answers[2]}`);
 }
 
 let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
