@@ -316,3 +316,27 @@ c) correct answer (I would use a number for this)
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
 */
 
+// 1
+
+let questionArray = [];
+
+let Question = function(question, answers, correct) {
+  this.question = question;
+	this.answers = answers;
+  this.correct = correct;
+}
+
+Question.prototype.randomQuestion = function(arr) {
+  let length = questionArray.length;
+  let random = Math.floor(Math.random() * length) + 1;
+  console.log(length);
+  console.log(random);
+}
+
+let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
+let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
+
+questionArray.push(queenieQuestion);
+questionArray.push(bojackQuestion);
+
+console.log(questionArray);
