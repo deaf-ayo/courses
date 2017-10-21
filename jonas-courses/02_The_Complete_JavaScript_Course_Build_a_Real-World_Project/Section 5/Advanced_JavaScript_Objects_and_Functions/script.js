@@ -356,6 +356,8 @@ questionArray.push(bojackQuestion);
 
 (function() {
   let questionArray = [];
+  let correctQuestionAnswer;
+  let score;
 
   let Question = function(question, answers, correctAnswer) {
     this.question = question;
@@ -372,14 +374,17 @@ questionArray.push(bojackQuestion);
       answers.forEach(function(el, index) {
         console.log(`${index + 1}: ${el}`);
       });
+      correctQuestionAnswer = correctAnswer;
     },
     userPrompt: function() {
-
+      let userAnswer = prompt('Which is the correct answer?');
+      userAnswer;
+      if (userAnswer - 1 !== correctQuestionAnswer) {
+        console.log('Wrong answer. Try again!');
+      } else {
+        console.log('Correct. Well done!');
+      }
     }
-  }
-
-  Question.prototype.userAnswer = function() {
-
   }
 
   let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
@@ -389,4 +394,8 @@ questionArray.push(bojackQuestion);
   questionArray.push(bojackQuestion);
 
   quizMaster.randomQuestion();
+  console.log(`Sneak Peak: ${correctQuestionAnswer + 1}`);
+  setTimeout(function() {
+        quizMaster.userPrompt();
+      }, 3000);
 })();
