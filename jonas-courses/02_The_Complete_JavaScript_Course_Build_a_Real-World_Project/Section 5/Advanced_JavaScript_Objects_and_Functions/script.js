@@ -332,8 +332,18 @@ Question.prototype.randomQuestion = function() {
   let random = Math.floor(Math.random() * length);
   let randomQuestion = questionArray[random];
   let answers = randomQuestion.answers;
-  console.log(randomQuestion.question);
-  console.log(`Which is the correct answer? 1) ${answers[0]}, 2) ${answers[1]} or 3) ${answers[2]}`);
+  let correctAnswer = randomQuestion.correct;
+  console.log(randomQuestion);
+  console.log(answers);
+  console.log(correctAnswer);
+  // prompts
+  let userAnswer = prompt(`Which is the correct answer? 1) ${answers[0]}, 2) ${answers[1]} or 3) ${answers[2]}`);
+  userAnswer;
+  if (userAnswer - 1 !== correctAnswer) {
+    console.log('Wrong answer. Try again!');
+  } else {
+    console.log('Correct. Well done!');
+  }
 }
 
 let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
@@ -341,5 +351,3 @@ let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 
 
 questionArray.push(queenieQuestion);
 questionArray.push(bojackQuestion);
-
-console.log(questionArray);
