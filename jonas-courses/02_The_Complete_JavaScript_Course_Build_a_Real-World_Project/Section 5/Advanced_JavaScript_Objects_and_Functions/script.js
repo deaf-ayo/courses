@@ -326,44 +326,6 @@ c) correct answer (I would use a number for this)
 11. Display the score in the console. Use yet another method for this.
 */
 
-// 1
-
-/*
-let questionArray = [];
-
-let Question = function(question, answers, correct) {
-  this.question = question;
-	this.answers = answers;
-  this.correct = correct;
-}
-
-Question.prototype.randomQuestion = function() {
-  // get a random question from question array
-  let length = questionArray.length;
-  let random = Math.floor(Math.random() * length);
-  let randomQuestion = questionArray[random];
-  let answers = randomQuestion.answers;
-  let correctAnswer = randomQuestion.correct;
-  console.log(randomQuestion);
-  console.log(answers);
-  console.log(correctAnswer);
-  // prompts
-  let userAnswer = prompt(`Which is the correct answer? 1) ${answers[0]}, 2) ${answers[1]} or 3) ${answers[2]}`);
-  userAnswer;
-  if (userAnswer - 1 !== correctAnswer) {
-    console.log('Wrong answer. Try again!');
-  } else {
-    console.log('Correct. Well done!');
-  }
-}
-
-let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
-let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
-
-questionArray.push(queenieQuestion);
-questionArray.push(bojackQuestion);
-*/
-
 (function() {
   let questionArray = [];
   let correctQuestionAnswer;
