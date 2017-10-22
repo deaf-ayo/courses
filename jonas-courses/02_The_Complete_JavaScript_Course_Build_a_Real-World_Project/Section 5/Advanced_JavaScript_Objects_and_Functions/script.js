@@ -383,11 +383,14 @@ c) correct answer (I would use a number for this)
     quizMaster.displayScore();
   }
 
-  let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
-  let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
 
-  questionArray.push(queenieQuestion);
-  questionArray.push(bojackQuestion);
+  let questionOne = new Question('Which city hosted the 2012 Summer Olympics?', ['Spain', 'England', 'Germany'], 1);
+  let questionTwo = new Question('Who painted the ceiling of the Sistine Chapel?', ['Vasari', 'da Vinci', 'Michelangelo'], 2);
+  let questionThree = new Question('What famous actor became Governor of California in 2003?', ['Arnold Schwarzenegger', 'Sylvester Stallone', 'Tom Hanks'], 0);
+
+  questionArray.push(questionOne);
+  questionArray.push(questionTwo);
+  questionArray.push(questionThree);
 
   endlessQuestions();
 })();
