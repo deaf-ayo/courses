@@ -314,48 +314,23 @@ c) correct answer (I would use a number for this)
 6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
 
 7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
-*/
 
-// 1
+--- Expert level ---
 
-/*
-let questionArray = [];
+8. After you display the result, display the next random question, so that the game never ends (Hint: write a function for this and call it right after displaying the result)
 
-let Question = function(question, answers, correct) {
-  this.question = question;
-	this.answers = answers;
-  this.correct = correct;
-}
+9. Be careful: after Task 8, the game literally never ends. So include the option to quit the game if the user writes 'exit' instead of the answer. In this case, DON'T call the function from task 8.
 
-Question.prototype.randomQuestion = function() {
-  // get a random question from question array
-  let length = questionArray.length;
-  let random = Math.floor(Math.random() * length);
-  let randomQuestion = questionArray[random];
-  let answers = randomQuestion.answers;
-  let correctAnswer = randomQuestion.correct;
-  console.log(randomQuestion);
-  console.log(answers);
-  console.log(correctAnswer);
-  // prompts
-  let userAnswer = prompt(`Which is the correct answer? 1) ${answers[0]}, 2) ${answers[1]} or 3) ${answers[2]}`);
-  userAnswer;
-  if (userAnswer - 1 !== correctAnswer) {
-    console.log('Wrong answer. Try again!');
-  } else {
-    console.log('Correct. Well done!');
-  }
-}
+10. Track the user's score to make the game more fun! So each time an answer is correct, add 1 point to the score (Hint: I'm going to use the power of closures for this, but you don't have to, just do this with the tools you feel more comfortable at this point).
 
-let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
-let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
-
-questionArray.push(queenieQuestion);
-questionArray.push(bojackQuestion);
+11. Display the score in the console. Use yet another method for this.
 */
 
 (function() {
   let questionArray = [];
+  let correctQuestionAnswer;
+  let score = 0;
+  let lineBreak = '-------------------------';
 
   let Question = function(question, answers, correctAnswer) {
     this.question = question;
@@ -363,25 +338,61 @@ questionArray.push(bojackQuestion);
     this.correctAnswer = correctAnswer;
   }
 
-  Question.prototype.randomQuestion = function() {
-    let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
-    let answers = randomQuestion.answers;
-    let correctAnswer = randomQuestion.correctAnswer;
-    console.log(randomQuestion.question);
-    answers.forEach(function(el, index) {
-      console.log(`${index + 1}: ${el}`);
-    });
+  let quizMaster = {
+    randomQuestion: function() {
+      let randomQuestion = questionArray[Math.floor(Math.random() * questionArray.length)];
+      let answers = randomQuestion.answers;
+      let correctAnswer = randomQuestion.correctAnswer;
+      console.log(randomQuestion.question);
+      answers.forEach(function(el, index) {
+        console.log(`${index + 1}: ${el}`);
+      });
+      correctQuestionAnswer = correctAnswer;
+    },
+    userPrompt: function() {
+      let userAnswer = prompt('Which is the correct answer');
+      userAnswer;
+      if (userAnswer === 'quit') {
+        score = 0;
+        console.log('The quiz is over!');
+        return;
+      } else if (userAnswer - 1 !== correctQuestionAnswer) {
+        console.log('Wrong answer. Try again!');
+        console.log(lineBreak);
+        endlessQuestions();
+      } else {
+        score ++;
+        console.log('Correct. Well done!');
+        console.log(lineBreak);
+        endlessQuestions();
+      }
+    },
+    displayScore: function() {
+      let userScore = `Your current score is ${score}`;
+      console.log(lineBreak);
+      console.log(userScore);
+      console.log(lineBreak);
+    }
   }
 
-  Question.prototype.userAnswer = function() {
-
+  function endlessQuestions() {
+    quizMaster.randomQuestion();
+    setTimeout(function() {
+        quizMaster.userPrompt();
+      }, 3000);
+    quizMaster.displayScore();
   }
 
-  let queenieQuestion = new Question('Is Queenie a beautiful cat?', ['Yes', 'No', 'Bork'], 0);
-  let bojackQuestion = new Question('Is Bojack a beautiful horse?', ['Yes', 'No', 'Neigh'], 2);
 
-  questionArray.push(queenieQuestion);
-  questionArray.push(bojackQuestion);
+  let questionOne = new Question('Which city hosted the 2012 Summer Olympics?', ['Spain', 'England', 'Germany'], 1);
+  let questionTwo = new Question('Who painted the ceiling of the Sistine Chapel?', ['Vasari', 'da Vinci', 'Michelangelo'], 2);
+  let questionThree = new Question('What famous actor became Governor of California in 2003?', ['Arnold Schwarzenegger', 'Sylvester Stallone', 'Tom Hanks'], 0);
 
-  queenieQuestion.randomQuestion();
+  questionArray.push(questionOne);
+  questionArray.push(questionTwo);
+  questionArray.push(questionThree);
+
+  endlessQuestions();
 })();
+
+/* note: definitely refractor this somehow */
