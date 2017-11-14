@@ -73,7 +73,7 @@ let UIController = (function() {
       return {
         type: document.querySelector(DOMstrings.inputType).value, // will be either inc or exp
         description: document.querySelector(DOMstrings.inputDescription).value,
-        value: document.querySelector(DOMstrings.inputValue).value
+        value: parseFloat(document.querySelector(DOMstrings.inputValue).value)
       }
     },
 
@@ -130,24 +130,33 @@ let controller = (function(budgetCtrl, UICtrl) {
     document.querySelector(DOM.inputBtn).addEventListener('click', ctrlAddItem);
     document.addEventListener('keyup', function(event) {
       if (event.key === 'Enter' || event.which === 13) {
+        event.preventDefault(); // prevents the enter key from also triggering a click event
         ctrlAddItem();
       }
     });
+  }
+
+  let updateBudget = function() {
+    // 1. calculate the budget
+    // 2. return the budget
+    // 3. display the budget on the UI
   }
 
   let ctrlAddItem = function() {
     let input, newItem;
     // 1. get the field input data
     input = UICtrl.getInput();
-    // 2. add the item to the budget controller
-    newItem = budgetCtrl.addItem(input.type, input.description, input.value);
-    // 3. add the item to the UI
-    UICtrl.addListitem(newItem, input.type);
-    // 4. clear the fields
-    UICtrl.clearFields();
-    // 5. calculate the budget
-    // 6. display the budget on the UI
 
+    if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
+      // 2. add the item to the budget controller
+      newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+      // 3. add the item to the UI
+      UICtrl.addListitem(newItem, input.type);
+      // 4. clear the fields
+      UICtrl.clearFields();
+      // 5. calculate and update budget
+      updateBudget();
+    }
   }
 
   return {
