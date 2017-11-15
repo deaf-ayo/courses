@@ -145,7 +145,8 @@ let UIController = (function() {
     expensesLabel: '.budget__expenses--value',
     percentageLabel: '.budget__expenses--percentage',
     container: '.container',
-    expensesPercLabel: '.item__percentage'
+    expensesPercLabel: '.item__percentage',
+    dateLabel: '.budget__title--month'
   }
 
   let formatNumber = function(num, type) {
@@ -258,6 +259,17 @@ let UIController = (function() {
         }
       });
     },
+    displayMonth: function() {
+      let now, year, month, formatter;
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat
+      formatter = new Intl.DateTimeFormat("en", { month: "long" });
+      month = formatter.format(now);
+
+      now = new Date();
+      year = now.getFullYear();
+      document.querySelector(DOMstrings.dateLabel).textContent = month + ' ' + year;
+
+    },
     getDOMstrings: function() {
       return DOMstrings;
     }
@@ -348,6 +360,7 @@ let controller = (function(budgetCtrl, UICtrl) {
   return {
     init: function() {
       console.log('Application has started.');
+      UICtrl.displayMonth();
       UICtrl.displayBudget(
         {
           budget: 0,
