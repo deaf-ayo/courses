@@ -14,6 +14,7 @@ name6 = 'Jane Miller';
 console.log(name6);// ES5
 */
 
+/*
 // ES5
 function driversLicence5(passedTest) {
   if (passedTest) {
@@ -53,3 +54,24 @@ for (let i = 0; i < 5; i++) {
 }
 
 console.log(i);
+*/
+
+// ----- lecture: blocks and IIFEs  -----
+
+{
+  const a = 1;
+  let b = 2;
+  var c = 3;
+}
+
+console.log(c);
+
+// console.log(a + b);
+
+// ES5
+
+(function() {
+  var c = 3;
+})();
+
+// console.log(c);
