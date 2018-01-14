@@ -413,7 +413,8 @@ function SmithPerson(firstName, yearOfBirth, lastName, nationality) {
 
 // ES6
 
-function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'american') {
+/*
+function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'American') {
   this.firstName = firstName;
   this.lastName = lastName;
   this.yearOfBirth = yearOfBirth;
@@ -423,3 +424,37 @@ function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = '
 
 var john = new SmithPerson('John', 1990);
 var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
+*/
+
+// ----- lecture: maps  -----
+
+const question = new Map();
+question.set('question', 'What is the latest official name of the latest Javascript version?');
+question.set(1, 'ES5');
+question.set(2, 'ES6');
+question.set(3, 'ES2015');
+question.set(4, 'ES7');
+question.set('correct', 4);
+question.set(true, 'Correct answer!');
+question.set(false, 'Wrong answer!');
+
+console.log(question.get('question'));
+//console.log(question.size);
+
+if(question.has(3)) {
+  //question.delete(3);
+  //console.log('Answer 3 is here');
+}
+
+//question.clear();
+
+//question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
+
+for(let [key, value] of question.entries()) {
+  if(typeof(key) === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+
+const ans = parseInt(prompt('Enter the correct answer'));
+console.log(question.get(ans === question.get('correct')));
