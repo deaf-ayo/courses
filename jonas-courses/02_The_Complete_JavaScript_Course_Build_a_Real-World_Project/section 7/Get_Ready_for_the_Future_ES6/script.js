@@ -505,6 +505,7 @@ Person6.greeting();
 
 // ----- lecture: classes with subclasses  -----
 
+/*
 // ES5
 
 var Person5 = function(name, yearOfBirth, job) {
@@ -568,3 +569,108 @@ const johnAthlete6 = new Athlete6('John', 1989, 'Swimmer', 2, 5);
 
 johnAthlete6.calculateAge();
 johnAthlete6.wonMedal();
+*/
+
+// ----- lecture: coding challenge  -----
+
+/*
+Suppose that you're working in a small town administration, and you're in charge of two town elements:
+1. Parks
+2. Streets
+
+It's a very small town, so right now there are only 3 parks and 4 streets. All parks and streets have a name and a build year.
+
+At an end-of-year meeting, your boss wants a final report with the following:
+1. Tree density of each park in the town (forumla: number of trees/park area)
+2. Average age of each town's park (forumla: sum of all ages/number of parks)
+3. The name of the park that has more than 1000 trees
+4. Total and average length of the town's streets
+5. Size classification of all streets: tiny/small/normal/big/huge. If the size is unknown, the default is normal
+
+All the report data should be printed to the console.
+
+HINT: Use some of the ES6 features: classes, subclasses, template strings, default parameters, maps, arrow functions, destructuring, etc.
+*/
+
+class Town {
+  constructor(name, length, year) {
+    this.name = name;
+    this.length = length;
+    this.year = year;
+  }
+}
+
+class Park extends Town {
+  constructor(name, length, width, year, trees) {
+    super(name, length, year);
+    this.width = width;
+    this.trees = trees;
+  }
+
+  age() {
+    let age = new Date().getFullYear() - this.year;
+    return age;
+  }
+
+  area() {
+    return this.length * this.width;
+  }
+
+  treeDensity() {
+    const area = this.area();
+    return (this.trees / area);
+  }
+}
+
+class Street extends Town {
+  constructor(name, length, year, size = 'normal') {
+    super(name, length, year);
+    this.size = size;
+  }
+}
+
+function avgAgeParks(...parks) {
+  let totalAge = 0;
+  parks.forEach(cur => totalAge += cur.age());
+  return (totalAge / parks.length);
+}
+
+function totalLength(...streets) {
+  let totalLength = 0;
+  streets.forEach(cur => totalLength += cur.length);
+  return totalLength;
+}
+
+function avgLength(totalLength, num) {
+  return totalLength / num;
+}
+
+const parks = [
+  new Park('Ocean Breeze', 98, 200, 1989, 357),
+  new Park('Town Retreat', 105, 300, 1944, 718),
+  new Park('Mountain Forest', 186, 500, 1887, 1016)
+]
+
+const streets = [
+  new Street('Gravel Path', 10, 1987, 'small'),
+  new Street('Windy Stroll', 20, 1945),
+  new Street('Seaside Street', 60, 1962, 'big'),
+  new Street('Town Lane', 110, 1936, 'huge')
+]
+
+console.log('---- PARKS REPORT ----');
+console.log(`Our ${parks.length} parks have an average age of ${avgAgeParks(...parks)} years`);
+for(const park of parks) {
+ console.log(`${park.name} has a tree density ${park.treeDensity()} trees per square km.`);
+}
+if (parks.find(park => park.trees > 1000)) {
+ console.log(`${parks.find(park => park.trees > 1000).name} has more than 1000 trees.`)
+} else {
+ console.log(`None of our parks has more than 1000 trees.`)
+}
+
+console.log('---- STREETS REPORT ----')
+console.log(`Our ${streets.length} streets have a total length of ${totalLength(...streets)} km, with an average of ${avgLength(totalLength(...streets), streets.length)} km.`)
+for (const street of streets) {
+ console.log(`${street.name}, built in ${street.year} is a ${street.size} street.`)
+}
