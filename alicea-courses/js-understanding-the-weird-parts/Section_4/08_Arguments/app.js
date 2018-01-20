@@ -19,10 +19,10 @@ greet('John');
 greet('John', 'Doe');
 greet('John', 'Doe', 'es');
 
-function testSpread(...spread) {
-  for (let el of spread) {
+function testRest(...rest) {
+  for (let el of rest) {
     console.log(el);
   }
 }
 
-testSpread('This', 'is', 'a', 'spread!');
+testRest('This', 'is', 'a', 'rest!');
