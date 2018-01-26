@@ -1,39 +1,50 @@
 (function(global, $) {
 
+  // 'new' object
   let Greetr = (firstName, lastName, language) => new Greetr.init(firstName, lastName, language);
 
+  // hidden within the scope of the IIFE and never directly accessible
   let supportedLangs = ['en', 'es'];
 
+  // informal greetings
   let greetings = {
     en: 'Hello',
     es: 'Hola'
   };
 
+  // formal greetings
   let formalGreetings = {
     en: 'Greetings',
     es: 'Saludos'
   };
 
+  // logger messages
   let logMessage = {
     en: 'Logged in',
     es: 'Inicio sesion'
   }
 
+  // prototype holds methods (to save memory space)
   Greetr.prototype = {
+    // 'this' refers to the calling object at execution time
     fullName: function() {
       return `${this.firstName} ${this.lastName}`;
     },
     validate: function() {
+      // check that it is a valid language
+      // references the externally inaccessible 'supportedLangs' within the closure
       if (supportedLangs.indexOf(this.language) === -1) {
         throw 'Invalid language';
       }
     },
+    // retrieve messages from object by referring to properties using [] syntax
     greeting: function() {
       return `${greetings[this.language]} ${this.firstName}!`;
     },
     formalGreeting: function() {
       return `${formalGreetings[this.language]}, ${this.fullName()}.`
     },
+    // chainable methods return their own containing object
     greet: function(formal) {
        let msg;
        // if undefined or null, coerce to 'false'
@@ -52,11 +63,15 @@
       if (console) {
         console.log(`${logMessage[this.language]}: ${this.fullName()}`);
       }
+       // make chainable
       return this;
     },
     setLang: function(lang) {
+      // set the language
       this.language = lang;
+      // validate
       this.validate();
+      // make chainable
       return this;
     },
     HTMLGreeting: function(selector, formal) {
@@ -66,26 +81,33 @@
       if (!selector) {
         throw 'Missing jQuery selector';
       }
+      // determine the message
       let msg;
       if (formal) {
         msg = this.formalGreeting();
       } else {
         msg = this.greeting();
       }
+      // inject the message in the chosen place in the DOM
       $(selector).html(msg);
       return this;
     }
   };
 
+  // the actual object is created here, allowing us to 'new' an object without calling 'new'
   Greetr.init = function(firstName = '', lastName = '', language = 'en') {
     let self = this;
     self.firstName = firstName;
     self.lastName = lastName;
     self.language = language;
+
+    self.validate();
   }
 
+  // trick borrowed from jQuery so we don't have to use the 'new' keyword
   Greetr.init.prototype = Greetr.prototype;
 
+  // attach our Greetr to the global object, and provide a shorthand '$G' for ease our poor fingers
   global.Greetr = global.G$ = Greetr;
 
 })(window, jQuery);
