@@ -57,7 +57,6 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  backface-visibility: hidden;
 }
 
 .heading-primary-main {
@@ -79,7 +78,6 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
-  animation: moveInRight 1s ease-out;
 }
 
 @keyframes moveInLeft {
@@ -98,14 +96,14 @@ body {
   }
 }
 
-@keyframes moveInRight {
+@keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(-100px);
   }
 
 80% {
-  transform: translateX(-10px);
+  transform: translateX(10px);
 }
 
   100% {
