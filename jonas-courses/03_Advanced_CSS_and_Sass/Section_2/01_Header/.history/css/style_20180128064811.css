@@ -47,11 +47,9 @@ body {
 
 .text-box {
   position: absolute;
-  /* relation to parent element > header */
-  top: 40%;
+  top: 50%;
   left: 50%;
-  /* relation to element itself > text-box */  
-  transform: translate(-50%, -50%);
+  background-color: red;
 }
 
 .heading-primary {
