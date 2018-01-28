@@ -33,8 +33,6 @@ body {
   background-position: top;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* custom - make header image a bit more colourful */
-  filter: saturate(110%);
 }
 
 .logo-box {
@@ -118,17 +116,6 @@ body {
   }
 }
 
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
 .btn:link,
 .btn:visited {
   text-transform: uppercase;
@@ -166,7 +153,6 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s;
 }
 
 .btn-white:after {
@@ -174,11 +160,5 @@ body {
 }
 
 .btn:hover:after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn-animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards;
+  
 }
