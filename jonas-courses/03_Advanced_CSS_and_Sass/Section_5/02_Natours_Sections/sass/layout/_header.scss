@@ -10,7 +10,8 @@
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* custom - make header image a bit more colourful */
-  filter: saturate(110%);
+  //filter: saturate(110%);
+  @include filter;
 
   &__logo-box {
     position: absolute;
