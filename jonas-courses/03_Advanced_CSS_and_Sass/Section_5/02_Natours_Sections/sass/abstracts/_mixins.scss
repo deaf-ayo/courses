@@ -10,3 +10,7 @@
 @mixin calcWidth($merge, $columns) {
   width: calc(#{$merge} * ((100% - ((#{$columns} - 1) * #{$gutter-horizontal})) / #{$columns}) + ((#{$merge} - 1) * #{$gutter-horizontal}));
  }
+
+ @mixin filter {
+  filter: saturate(110%);
+ }
